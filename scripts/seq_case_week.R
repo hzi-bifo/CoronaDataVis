@@ -5,14 +5,14 @@ library(grid)
 
 country_rename_map <- c(`Democratic Republic of the Congo`='Congo',
                         `"Korea, South"`= 'South Korea',
+                        `Korea, South`= 'South Korea',
                         `Congo (Brazzaville)`= 'Congo',
                         `Congo (Kinshasa)`= 'Congo',
-                        `Czech Republic`='Czech',
+                        `Czech Republic`='Czechia',
                         `Hong Kong`='China',
                         `Taiwan*`='China',
                         Taiwan='China',
                         US='USA')
-
 
 seq_meta <- read_tsv("../data/metadata_fullgenome_filtered.tsv") %>%
   mutate(country=ifelse(country %in% names(country_rename_map), 
